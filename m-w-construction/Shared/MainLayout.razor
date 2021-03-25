@@ -1,0 +1,74 @@
+﻿@inherits LayoutComponentBase
+
+@code{
+
+    protected override void OnInitialized()
+    {
+        _currentTheme = _defaultTheme;
+    }
+
+    void DarkMode()
+    {
+        _currentTheme = _currentTheme == _defaultTheme ? _darkTheme : _defaultTheme;
+    }
+
+    MudTheme _currentTheme = new MudTheme();
+
+    readonly MudTheme _defaultTheme = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            Black = "#272c34"
+        }
+    };
+
+    readonly MudTheme _darkTheme = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            Black = "#27272f",
+            Background = "#32333d",
+            BackgroundGrey = "#27272f",
+            Surface = "#373740",
+            DrawerBackground = "#27272f",
+            DrawerText = "rgba(255,255,255, 0.50)",
+            DrawerIcon = "rgba(255,255,255, 0.50)",
+            AppbarBackground = "#27272f",
+            AppbarText = "rgba(255,255,255, 0.70)",
+            TextPrimary = "rgba(255,255,255, 0.70)",
+            TextSecondary = "rgba(255,255,255, 0.50)",
+            ActionDefault = "#adadb1",
+            ActionDisabled = "rgba(255,255,255, 0.26)",
+            ActionDisabledBackground = "rgba(255,255,255, 0.12)"
+        }
+    };
+}
+<style type="text/css">
+    .header {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+</style>
+
+<div class="main">
+    <div class="top-row px-4" style="background-color: black; outline: black">
+        <MudButton OnClick="@((e) => DarkMode())">Toggle Dark/Light Mode</MudButton>
+        <MudIcon Icon="@Icons.Custom.Brands.Microsoft" />
+        <MudIcon Icon="@Icons.Custom.Brands.YouTube" />
+        <MudIcon Icon="@Icons.Custom.Brands.Instagram" />
+        <MudIcon Icon="@Icons.Custom.Brands.WhatsApp" />
+        <MudIcon Icon="@Icons.Custom.Brands.Facebook" />
+    </div>
+    <div class="header">
+        <h1>Pioneer</h1>
+        <h3> Construction and Carpentry</h3>
+    </div>
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+<MudThemeProvider Theme="_currentTheme"></MudThemeProvider>
+<MudDialogProvider />
+<MudSnackbarProvider />
