@@ -54,18 +54,21 @@
 <div class="main">
     <div class="top-row px-4" style="background-color: black; outline: black">
         <MudButton OnClick="@((e) => DarkMode())">Toggle Dark/Light Mode</MudButton>
-        <MudIcon Icon="@Icons.Custom.Brands.Microsoft" />
-        <MudIcon Icon="@Icons.Custom.Brands.YouTube" />
-        <MudIcon Icon="@Icons.Custom.Brands.Instagram" />
-        <MudIcon Icon="@Icons.Custom.Brands.WhatsApp" />
-        <MudIcon Icon="@Icons.Custom.Brands.Facebook" />
+        <a href="https://www.facebook.com/Pioneer-Carpentry-And-Construction-107322914145891/"><MudIcon Icon="@Icons.Custom.Brands.Facebook" /></a>
+        <a href="tel:+447624244117"><MudIcon Icon="@Icons.Custom.Brands.WhatsApp" />
+            <MudIcon Icon="@Icons.Outlined.Call" /></a>
+        <a href="mailTo: pioneer-construction@outlook.com"><MudIcon Icon="@Icons.Outlined.Mail"></MudIcon></a>
+        
     </div>
     <div class="header">
-        <h1>Pioneer</h1>
-        <h3> Construction and Carpentry</h3>
+        <img src="imgs/pioneer-logo.jpg" style="border-radius: 50%; padding: 10px" />
     </div>
-    <div class="content px-4">
+    <div class="content px-4" >
         @Body
+        
+    </div>
+    <div class="container"style="margin: auto; padding: auto;display: flex; justify-content: center;">
+        <img src="imgs/Portfolio/BackgroundWithLogo.jpg" style=" padding: 10px" />
     </div>
 </div>
 
